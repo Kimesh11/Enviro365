@@ -36,5 +36,5 @@ public class InvestmentController {
 	@PutMapping("/investor/product/updateBalance/{id}")
 	public Products updateBalanceByUserId(@PathVariable("id") int userId, @RequestBody Products products) {
 		return investmentService.updateProductBalanceByUserId(userId, products);
-	}
+	}	
 }

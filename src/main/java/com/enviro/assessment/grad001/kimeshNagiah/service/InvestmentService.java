@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.enviro.assessment.grad001.kimeshNagiah.dto.InvestmentDTO;
+import com.enviro.assessment.grad001.kimeshNagiah.helpers.Helper;
 import com.enviro.assessment.grad001.kimeshNagiah.interfaces.InvestmentServiceInterface;
 import com.enviro.assessment.grad001.kimeshNagiah.model.Investors;
 import com.enviro.assessment.grad001.kimeshNagiah.model.Products;
@@ -32,28 +33,33 @@ public class InvestmentService implements InvestmentServiceInterface {
 	public List<Investors> getInvestors() {
 		return (List<Investors>) investorsRepository.findAll();
 	}
+	
+	private Helper helper;
 
 	@Override
 	public InvestmentDTO saveAccount(InvestmentDTO investmentDTO) {
-		InvestmentDTO savedInvestors = new InvestmentDTO();
-		System.out.println("in save account");
-		if(investmentDTO != null) {
-			System.out.println("in save account2");
-			if(investmentDTO.getInvestors() != null ) { //&& investmentDTO.getProducts() != null
-				Investors investors = investorsRepository.save(investmentDTO.getInvestors());
-				//investmentDTO.getProducts().setUserId(investors.getUserId());
-				//Products products = productsRepository.save(investmentDTO.getProducts());
-				
-//				investmentDTO.getTransaction().setUserId(investors.getUserId());
-//				Transaction transaction = transactionRepository.save(investmentDTO.getTransaction());
-				
-				savedInvestors.setInvestors(investors);
-				//savedInvestors.setProducts(products);
-				//savedInvestors.setTransaction(transaction);
+		try {
+			InvestmentDTO savedInvestors = new InvestmentDTO();
+			if(investmentDTO != null) {
+				if(investmentDTO.getInvestors() != null ) { //&& investmentDTO.getProducts() != null
+					Investors investors = investorsRepository.save(investmentDTO.getInvestors());
+					investmentDTO.getProducts().setUserId(investors.getUserId());
+					Products products = productsRepository.save(investmentDTO.getProducts());
+					
+	//				investmentDTO.getTransaction().setUserId(investors.getUserId());
+	//				Transaction transaction = transactionRepository.save(investmentDTO.getTransaction());
+					
+					savedInvestors.setInvestors(investors);
+					savedInvestors.setProducts(products);
+					//savedInvestors.setTransaction(transaction);
+				}
 			}
-		}
 		// returning an error here
-		return savedInvestors;
+			return savedInvestors;
+		} catch (Exception e) {
+			System.out.println(e.getMessage()); //Use a logger
+		}
+		return null;
 	}
 
 	@Override
@@ -87,7 +93,7 @@ public class InvestmentService implements InvestmentServiceInterface {
 		for (int i = 0; i < productTypes.size(); i++) {
 			if (products.getType().equalsIgnoreCase(accountType)) {
 				if (accountType.equalsIgnoreCase("retirement")) {
-					if (investor.getInvestorAge() > 65) {
+					if (helper.getInvestorAge() > 65) {
 						products.withdraw(transactionId, amount, withdrawalDate, recipientBankingDetails);
 					}
 				} else  {
