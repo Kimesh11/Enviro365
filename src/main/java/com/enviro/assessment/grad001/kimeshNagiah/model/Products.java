@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 @Entity
@@ -77,9 +79,12 @@ public class Products {
 		this.userId = userId;
 	}
 	
+	@Transient
 	public List<String> getAllAccountTypes() {
         return new ArrayList<>(accountTypes);
     }
+	
+	
 	
 //	public List<Transaction> getTransactionHistory() {
 //        return transactionHistory;
@@ -94,7 +99,7 @@ public class Products {
 //        }
 //        // withdrawal method in service check type against retirement
 //    }
-	
+
 	public void withdraw(int transactionId, double amount, Date withdrawalDate, String recipientBankingDetails) {
         if (amount > 0 && amount < 0.9 * currentBalance && !(amount > currentBalance)) {
         	this.setCurrentBalance(currentBalance -= amount);

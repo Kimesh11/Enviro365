@@ -1,0 +1,18 @@
+{
+    "investors": {
+        "userName": "John Doe",
+        "idNumber": "9001011234087",
+        "address": "123 Main St, City",
+        "contact": "+1 (123) 456-7890"
+    },
+    "products": [{
+		"type": "Retirement",
+		"name": "Retirement account",
+		"currentBalance": 65000.00
+	}, {
+		"type": "Savings",
+		"name": "Savings account",
+		"currentBalance": 55000.00
+	}
+	]
+}

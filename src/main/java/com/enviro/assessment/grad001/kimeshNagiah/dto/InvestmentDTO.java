@@ -19,6 +19,7 @@ public class InvestmentDTO {
 	public Products getProducts() {
 		return products;
 	}
+	
 	public void setProducts(Products products) {
 		this.products = products;
 	}
@@ -29,4 +30,6 @@ public class InvestmentDTO {
 	public void setTransaction(Transaction transaction) {
 		this.transaction = transaction;
 	}
+	
+	
 }
