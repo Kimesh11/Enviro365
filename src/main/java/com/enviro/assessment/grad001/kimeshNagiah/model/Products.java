@@ -100,14 +100,14 @@ public class Products {
 //        // withdrawal method in service check type against retirement
 //    }
 
-	public void withdraw(int transactionId, double amount, Date withdrawalDate, String recipientBankingDetails) {
-        if (amount > 0 && amount < 0.9 * currentBalance && !(amount > currentBalance)) {
-        	this.setCurrentBalance(currentBalance -= amount);
-            Transaction transaction = new Transaction(transactionId, type, amount, withdrawalDate, recipientBankingDetails, userId);
-            //transactionHistory.add(transaction);
-        } else {
-        	throw new IllegalArgumentException("");
-        }
-    }
+//	public void withdraw(int transactionId, double amount, Date withdrawalDate, String recipientBankingDetails) {
+//        if (amount > 0 && amount < 0.9 * currentBalance && !(amount > currentBalance)) {
+//        	this.setCurrentBalance(currentBalance -= amount);
+//            Transaction transaction = new Transaction(type, amount, withdrawalDate, recipientBankingDetails, userId);
+//            //transactionHistory.add(transaction);
+//        } else {
+//        	throw new IllegalArgumentException("");
+//        }
+//    }
 	
 }

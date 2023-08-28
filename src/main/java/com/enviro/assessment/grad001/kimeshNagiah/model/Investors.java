@@ -1,15 +1,9 @@
 package com.enviro.assessment.grad001.kimeshNagiah.model;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Investors {
@@ -21,17 +15,21 @@ public class Investors {
 	private String idNumber;
 	private String address;
 	private String contact;
+	private String accountNumber;
+	private String email;
 	
 	public Investors() {
 		
 	}
 	
-	public Investors(int userId, String userName, String idNumber, String address, String contact) {
+	public Investors(int userId, String userName, String idNumber, String address, String contact, String accountNumber, String email) {
 		this.userId = userId;
 		this.userName = userName;
 		this.idNumber = idNumber;
 		this.address = address;
 		this.contact = contact;
+		this.accountNumber = accountNumber;
+		this.email = email;
 	}
 
 
@@ -74,5 +72,23 @@ public class Investors {
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 		
 }

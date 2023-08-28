@@ -1,5 +1,6 @@
 package com.enviro.assessment.grad001.kimeshNagiah.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -15,20 +16,24 @@ public class Transaction {
 	private int transactionId;
     private String accountType;
     private double withdrawalAmount;
-    private Date withdrawalDate;
-    private String recipientBankingDetails;
+    private LocalDate withdrawalDate;
+    private String accountNumber;
+    private double previousBalance;
+    private double updatedBalance;
     private int userId;
     
     public Transaction() {
     	
     }
     
-    public Transaction(int transactionId, String accountType, double withdrawalAmount, Date withdrawalDate, String recipientBankingDetails, int userId) {
-        this.transactionId = transactionId;
+    public Transaction(String accountType, double withdrawalAmount, LocalDate withdrawalDate, String accountNumber,
+    		double previousBalance, double updatedBalance ,int userId) {
         this.accountType = accountType;
         this.withdrawalAmount = withdrawalAmount;
         this.withdrawalDate = withdrawalDate;
-        this.recipientBankingDetails = recipientBankingDetails;
+        this.accountNumber = accountNumber;
+        this.previousBalance = previousBalance;
+        this.updatedBalance = updatedBalance;
         this.userId = userId;
     }
 
@@ -56,20 +61,36 @@ public class Transaction {
 		this.withdrawalAmount = withdrawalAmount;
 	}
 
-	public Date getWithdrawalDate() {
+	public LocalDate getWithdrawalDate() {
 		return withdrawalDate;
 	}
 
-	public void setWithdrawalDate(Date withdrawalDate) {
+	public void setWithdrawalDate(LocalDate withdrawalDate) {
 		this.withdrawalDate = withdrawalDate;
 	}
 
-	public String getRecipientBankingDetails() {
-		return recipientBankingDetails;
+	public String getAccountNumber() {
+		return accountNumber;
 	}
 
-	public void setRecipientBankingDetails(String recipientBankingDetails) {
-		this.recipientBankingDetails = recipientBankingDetails;
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public double getPreviousBalance() {
+		return previousBalance;
+	}
+
+	public void setPreviousBalance(double previousBalance) {
+		this.previousBalance = previousBalance;
+	}
+
+	public double getUpdatedBalance() {
+		return updatedBalance;
+	}
+
+	public void setUpdatedBalance(double updatedBalance) {
+		this.updatedBalance = updatedBalance;
 	}
 
 	public int getUserId() {
@@ -80,5 +101,217 @@ public class Transaction {
 		this.userId = userId;
 	}
     
-    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

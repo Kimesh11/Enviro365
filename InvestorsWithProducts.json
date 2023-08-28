@@ -1,0 +1,62 @@
+{
+    "investors": {
+        "userName": "John Doe",
+        "idNumber": "9001011234087",
+        "address": "123 Main St, City",
+        "contact": "+1 (123) 456-7890",
+		"accountNumber": "1234567890",
+		"email": "j.doe@example.com"
+    },
+    "products": [{
+		"type": "Retirement",
+		"name": "Retirement account",
+		"currentBalance": 65000.00
+		}, {
+			"type": "Savings",
+			"name": "Savings account",
+			"currentBalance": 55000.00
+		}
+	]
+}
+
+{
+    "investors": {
+        "userName": "Jane Doe",
+        "idNumber": "8505011234087",
+        "address": "256 Baker St, JHB",
+        "contact": "0824529897",
+		"accountNumber": "987654321",
+		"email": "jane.d@hotmail.com"
+    },
+    "products": [{
+		"type": "Educational",
+		"name": "Educational account",
+		"currentBalance": 35000.00
+		}, {
+			"type": "Savings",
+			"name": "Savings account",
+			"currentBalance": 85000.00
+		}
+	]
+}
+
+{
+    "investors": {
+        "userName": "Charlie Sheen",
+        "idNumber": "5807241234086",
+        "address": "5 6th street, Rosebank",
+        "contact": "0725589965",
+		"accountNumber": "68258955584",
+		"email": "charlie@mail.com"
+    },
+    "products": [{
+		"type": "Retirement",
+		"name": "Retirement account",
+		"currentBalance": 95000.00
+		}, {
+			"type": "Savings",
+			"name": "Savings account",
+			"currentBalance": 85000.00
+		}
+	]
+}

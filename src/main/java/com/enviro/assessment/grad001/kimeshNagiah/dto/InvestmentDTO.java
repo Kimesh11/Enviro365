@@ -4,10 +4,12 @@ import com.enviro.assessment.grad001.kimeshNagiah.model.Investors;
 import com.enviro.assessment.grad001.kimeshNagiah.model.Products;
 import com.enviro.assessment.grad001.kimeshNagiah.model.Transaction;
 
+import java.util.List;
+
 public class InvestmentDTO {
 	
 	private Investors investors;
-	private Products products;
+	private List<Products> products;
 	private Transaction transaction;
 	
 	public Investors getInvestors() {
@@ -16,11 +18,11 @@ public class InvestmentDTO {
 	public void setInvestors(Investors investors) {
 		this.investors = investors;
 	}
-	public Products getProducts() {
+	public List<Products> getProducts() {
 		return products;
 	}
 	
-	public void setProducts(Products products) {
+	public void setProducts(List<Products> products) {
 		this.products = products;
 	}
 	
