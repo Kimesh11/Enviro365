@@ -7,5 +7,7 @@ import com.enviro.assessment.grad001.kimeshNagiah.model.Investors;
 
 @Repository
 public interface InvestorsRepository extends CrudRepository<Investors, Integer> {
+	
+	Investors findByIdNumber(String idNumber);
 
 }

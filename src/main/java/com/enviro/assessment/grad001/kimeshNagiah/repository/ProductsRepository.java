@@ -10,4 +10,8 @@ import com.enviro.assessment.grad001.kimeshNagiah.model.Products;
 public interface ProductsRepository extends CrudRepository<Products, Integer>{
 
 	Products findByuserId(int userid);
+
+	List<Products> findAllByuserId(int userid);
+
+	Products findByUserIdAndType(int userId, String accountType);
 }
